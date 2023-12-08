@@ -20,17 +20,28 @@ public class PlayerControler : MonoBehaviour
     private Vector2 _movementInputSmoothVelocity;
     private Camera _camera;
 
+    //private Animation _animator;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _camera = Camera.main;
+        //_animator = GetComponent<Animation>();
     }
 
     private void FixedUpdate()
     {
         SetPlayerVelocity();
         RotateInDirectionOfInput();
+        //SetAnimation();
     }
+  /*  private void SetAnimation()
+    {
+        bool ismoving = _movementInput != Vector2.zero;
+
+        _animator.SetBool("IsMoving", ismoving);
+       
+        
+    }*/
 
     private void SetPlayerVelocity()
     {

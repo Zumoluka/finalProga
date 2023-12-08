@@ -12,7 +12,7 @@ public class PlayerNearBy : MonoBehaviour
 
     public void Awake()
     {
-        _player = FindObjectOfType<PlayerControler>().transform;
+        _player = FindObjectOfType<PLayerControler2>().transform;
     }
 
 

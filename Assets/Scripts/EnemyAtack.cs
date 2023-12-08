@@ -8,7 +8,7 @@ public class EnemyAtack : MonoBehaviour
     private float _damageAcount;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<PlayerControler>())
+        if (collision.gameObject.GetComponent<PLayerControler2>())
         {
             var healthcontroller = collision.gameObject.GetComponent<GeneralHealth>();
             healthcontroller.TakeDamage(_damageAcount);

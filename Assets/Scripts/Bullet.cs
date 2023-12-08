@@ -17,7 +17,9 @@ private Camera _camera;
     {
         if(collision.GetComponent<Enemy>())
         {
-            Destroy(collision.gameObject);
+
+            GeneralHealth healthcontroler = collision.GetComponent<GeneralHealth>();
+            healthcontroler.TakeDamage(10);
             Destroy(gameObject);
         }
 
