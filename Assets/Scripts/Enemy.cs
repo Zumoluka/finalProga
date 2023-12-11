@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
@@ -17,6 +18,7 @@ public class Enemy : MonoBehaviour
     private Vector2 _targetDirection;
     private float _changeDirectionCooldown;
     private Camera _camera;
+
 
     private void Awake()
     {
@@ -85,6 +87,20 @@ public class Enemy : MonoBehaviour
         if ((screenPosition.y < _screenBorder && _targetDirection.y < 0) || (screenPosition.y > _camera.pixelHeight - _screenBorder && _targetDirection.y > 0))
         {
             _targetDirection = new Vector2(_targetDirection.x, - _targetDirection.y);
+        }
+    }
+    public int danoAlJugador = 10;
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Reduce la vida del jugador al colisionar con el enemigo
+            PLayerControler2 jugador = collision.gameObject.GetComponent<PLayerControler2>();
+            if (jugador != null)
+            {
+                jugador.RecibirDano(danoAlJugador);
+            }
         }
     }
 }

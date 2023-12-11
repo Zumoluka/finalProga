@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PLayerControler2 : MonoBehaviour
 {
@@ -14,13 +15,15 @@ public class PLayerControler2 : MonoBehaviour
     [SerializeField]
     private float _screenBorder;
 
+    
     private Rigidbody2D _rigidbody;
     private Vector2 _movementInput;
     private Vector2 _smoothedMovementInput;
     private Vector2 _movementInputSmoothVelocity;
     private Camera _camera;
     private Animator _animator;
-
+    public int vidaMaxima = 100;
+    private int vidaActual;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -86,5 +89,39 @@ public class PLayerControler2 : MonoBehaviour
     private void OnMove(InputValue inputValue)
     {
         _movementInput = inputValue.Get<Vector2>();
+    }
+    void Start()
+    {
+        vidaActual = vidaMaxima;
+    }
+
+    public void RecibirDano(int cantidad)
+    {
+        vidaActual -= cantidad;
+
+        // Verifica si el jugador ha perdido toda su vida
+        if (vidaActual <= 0)
+        {
+            //StartCoroutine(EsperarYCambiarEscena());
+            Morir();
+        }
+    }
+    IEnumerator EsperarYCambiarEscena()
+    {
+        yield return new WaitForSeconds(3f);
+
+        // Cambia de escena
+        SceneManager.LoadScene("End Game");
+    }
+    IEnumerator CambiarEscena()
+    {
+        yield return new WaitForSeconds(4);
+        SceneManager.LoadScene("End Game");
+    }
+
+    void Morir()
+    {
+        // Código de muerte aquí
+        StartCoroutine(CambiarEscena());
     }
 }

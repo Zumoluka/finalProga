@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GeneralHealth : MonoBehaviour
 {
 
     [SerializeField]
-    private float _currentHealth;
+    public float _currentHealth;
 
     [SerializeField]
     private float _maximumHealth;
 
+   
     public float RemainingHealthPercentage
     {
         get
@@ -75,5 +77,6 @@ public class GeneralHealth : MonoBehaviour
             _currentHealth = _maximumHealth;
         }
     }
+
 
 }
