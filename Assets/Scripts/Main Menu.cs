@@ -13,5 +13,8 @@ public void QuitGame()
 {
     Application.Quit();
 }
-
+public void EndGame()
+    {
+        SceneManager.LoadScene("End Game");
+    }
 }

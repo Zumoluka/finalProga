@@ -25,9 +25,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Layer 1
+  - Layer 2
+  - Layer 3
   - 
   - 
   - 
@@ -41,18 +41,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BackGround
-    uniqueID: 1664187883
-    locked: 0
-  - name: Collectable
-    uniqueID: 1677840743
+  - name: Background
+    uniqueID: 2809310265
     locked: 0
   - name: Bullet
-    uniqueID: 846950769
+    uniqueID: 2198061333
     locked: 0
   - name: Player
-    uniqueID: 3442165491
+    uniqueID: 152247859
     locked: 0
   - name: Enemy
-    uniqueID: 1576270109
+    uniqueID: 1017305855
+    locked: 0
+  - name: Collectable
+    uniqueID: 3396978009
+    locked: 0
+  - name: Layer 1
+    uniqueID: 2425651459
+    locked: 0
+  - name: Layer 2
+    uniqueID: 4250941897
+    locked: 0
+  - name: Layer 3
+    uniqueID: 4189426099
     locked: 0
