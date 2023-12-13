@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 public class ScoreController : MonoBehaviour
 {
 
@@ -11,5 +12,9 @@ public class ScoreController : MonoBehaviour
     {
         Score += amount;
         OnScoreChange.Invoke();
+        if (Score == 100000)
+        {
+            SceneManager.LoadScene("Victory");
+        }
     }
 }
