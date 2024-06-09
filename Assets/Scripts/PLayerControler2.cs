@@ -110,7 +110,7 @@ public class PLayerControler2 : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
 
-        // Cambia de escena
+    
         SceneManager.LoadScene("End Game");
     }
     IEnumerator CambiarEscena()
@@ -121,7 +121,7 @@ public class PLayerControler2 : MonoBehaviour
 
     void Morir()
     {
-        // Código de muerte aquí
+
         StartCoroutine(CambiarEscena());
     }
 }
