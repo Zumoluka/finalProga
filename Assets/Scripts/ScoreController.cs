@@ -18,11 +18,5 @@ public class ScoreController : MonoBehaviour
             SceneManager.LoadScene("Victory");
         }
     }
-    public void Update()
-    {
-        if (Score == 10000)
-        {
-            SceneManager.LoadScene(3);
-        }
-    }
+
 }
