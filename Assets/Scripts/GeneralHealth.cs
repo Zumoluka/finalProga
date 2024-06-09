@@ -10,10 +10,13 @@ public class GeneralHealth : MonoBehaviour
     [SerializeField]
     public float _currentHealth;
 
+
+
     [SerializeField]
     private float _maximumHealth;
 
-   
+
+
     public float RemainingHealthPercentage
     {
         get

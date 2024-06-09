@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     private float _rotationSpeed;
+
+
     [SerializeField]
     private float _screenBorder;
 
